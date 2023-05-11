@@ -1,0 +1,47 @@
+<%- include('../layout/header')%>
+
+
+  <section class="vh-100" style="background-color: #cf5ea0;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+
+              <h3 class="mb-5">EDIT USER</h3>
+
+
+              <form action="/admin/dashboard/edit-user" method="post" class="text-center align-items-center">
+
+                <div class="form-outline mb-4">
+                  <input type="name" name="name" id="typeEmailX-2" class="form-control form-control-lg" />
+                  <label class="form-label" for="typeEmailX-2">name</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" name="email" id="typeEmailX-2" class="form-control form-control-lg" />
+                  <label class="form-label" for="typeEmailX-2">Email</label>
+                </div>
+                <!-- <h1><%=message.userId%></h1> -->
+                <input type="hidden" name="oldEmail" value="<%=message.userId%>" placeholder="<%=message.userId%>">
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Update user</button>
+
+                <% if (message.Message) { %>
+                  <p class="text-success">
+                    <%= message.Message %>
+                  </p>
+                  <% } %>
+                    <h6 class="pt-3"><a href="/admin/dashboard/edit-user">back to dashboard</a></h6>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <%- include('../layout/footer')%>
